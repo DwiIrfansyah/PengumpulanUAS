@@ -1,70 +1,44 @@
-<!doctype html>
-<html lang="en">
+<div class="container">
+    
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.83.1">
-    <title>Signin Template · Bootstrap v5.0</title>
+        <div class="col-lg-5">
 
-    <link rel="canonical" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-
-
-
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/login.css" rel="stylesheet">
-</head>
-
-<body class="text-center">
-
-    <main class="form-signin">
-        <form>
-            <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Login Pendataan Kepegawaian</h1>
+                                </div>
+                                <?= $this->session->flashdata('pesan'); ?>
+                                <form class="user" method="post" action="<?=base_url('auth'); ?>">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="username" name="username"
+                                            placeholder="Username" value="<?= set_value('username'); ?>">
+                                        <?= form_error('username', '<small class="text-danger pl-3">','</small>'); ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="password" name="password" placeholder="Password">
+                                            <?= form_error('password', '<small class="text-danger pl-3">','</small>'); ?>    
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                                        Login
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-        </form>
-    </main>
+        </div>
 
+    </div>
 
-
-</body>
-
-</html>
+</div>
